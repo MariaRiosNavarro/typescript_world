@@ -1,4 +1,6 @@
 Typescript World
 ================
 
-practicing Typescript in a Node.js project.
+practicing Typescript 
+
+[Mosh Tutorial](https://www.youtube.com/watch?v=d56mG7DezGs&t=4s)

@@ -112,3 +112,94 @@ function kgToLb(weight: number|string): number {
 console.log("number parameter", kgToLb(10));
 console.log("string parameter", kgToLb('10Kg'));
 
+// Intersection Types
+
+type Draggable = {
+    drag: () => void;
+}
+
+type Resizable = {
+    resize: () => void;
+}
+
+type UIWidget = Draggable & Resizable;
+
+let TEXTBOX: UIWidget = {
+    drag: () => {},
+    resize: () => {}
+}
+
+// Literal Types (exact , specific)
+
+type Quantity = 50 | 100  ;
+
+let quantity: Quantity = 100 ;
+
+type Metric = 'cm' | 'inch';
+
+// Nullable Types
+
+function greet(name: string | null | undefined) {
+    if (name)
+        console.log(name.toUpperCase());
+    else
+        console.log('Hola');
+        
+}
+
+greet(null); // Hola
+
+// Optional Chaining
+
+// VErsion 1
+
+// type Customer = {
+//     birthday: Date;
+// }
+
+// function getCustomer(id:number) : Customer | null | undefined {
+//     return id === 0? null : {birthday: new Date()};
+// }
+
+// let customer = getCustomer(0)
+
+// // if (customer !== null && customer !== undefined) {
+//     // Optional property access operator better
+//     console.log(customer?.birthday);
+// // }
+
+// Version 2
+
+type Customer = {
+    birthday?: Date;
+}
+
+function getCustomer(id:number) : Customer | null | undefined {
+    return id === 0? null : {birthday: new Date()};
+}
+
+let customer = getCustomer(0)
+
+console.log(customer?.birthday?.getFullYear());
+
+
+// Otional element access operator
+
+// if (customer !== null && customer !== undefined) {
+    // Optional property access operator better
+    console.log(customer?.birthday);
+// }
+
+//  Optional call
+
+// let log: any = (message: string) => console.log(message);
+let log: any = null;
+
+log?.('a');
+
+
+
+
+
+
+

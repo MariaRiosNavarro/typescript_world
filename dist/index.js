@@ -40,4 +40,16 @@ function kgToLb(weight) {
 }
 console.log("number parameter", kgToLb(10));
 console.log("string parameter", kgToLb('10Kg'));
+let TEXTBOX = {
+    drag: () => { },
+    resize: () => { }
+};
+let quantity = 100;
+function greet(name) {
+    if (name)
+        console.log(name.toUpperCase());
+    else
+        console.log('Hola');
+}
+greet(null);
 //# sourceMappingURL=index.js.map
